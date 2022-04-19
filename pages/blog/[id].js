@@ -1,17 +1,22 @@
 import { client } from "../../lib/client";
+import styles from '../../styles/Home.module.css';
+import Layout from "../../components/layout"
+import * as style from "../../styles/singleBlog.module.scss"
+import ReactMarkdown from 'react-markdown'
 
 export default function BlogId({ blog }) {
   return (
-    <main>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-      />
-    </main>
-  );
+    <Layout>
+      <div className={style.wrapper}>
+        <div className={style.container}>
+          <h1 className={styles.title}>{blog.title}</h1>
+          <p className={styles.publishedAt}>{blog.publishedAt}</p>
+          <p className="category">{blog.category && `${blog.category.name}`}</p>
+          <ReactMarkdown children={blog.body} />
+        </div>
+      </div>
+    </Layout>
+);
 }
 
 // 静的生成のためのパスを指定します
