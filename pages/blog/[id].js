@@ -3,6 +3,9 @@ import styles from '../../styles/Home.module.css';
 import Layout from "../../components/layout"
 import * as style from "../../styles/singleBlog.module.scss"
 import ReactMarkdown from 'react-markdown'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import 'katex/dist/katex.min.css'
 
 export default function BlogId({ blog }) {
   return (
@@ -12,7 +15,10 @@ export default function BlogId({ blog }) {
           <h1 className={styles.title}>{blog.title}</h1>
           <p className={styles.publishedAt}>{blog.publishedAt}</p>
           <p className="category">{blog.category && `${blog.category.name}`}</p>
-          <ReactMarkdown>{blog.body}</ReactMarkdown>
+          <ReactMarkdown
+            rehypePlugins={[rehypeKatex]}
+            remarkPlugins={[remarkMath]}>
+            {blog.body}</ReactMarkdown>
         </div>
       </div>
     </Layout>
