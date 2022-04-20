@@ -11,7 +11,7 @@ const Header = () => {
         <meta name="description" content="IdeaTech by Next.js + microCMS" />
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2661815267943239"
-        crossorigin="anonymous"></script>
+        crossOrigin="anonymous"></script>
       </Head>
 
       <div className={style.container}>
