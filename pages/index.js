@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import * as style from "../styles/blog.module.scss" 
 import Link from "next/link";
 import { client } from "../lib/client";
 import Layout from "../components/layout" 
@@ -8,22 +9,19 @@ import Layout from "../components/layout"
 export default function Home({blog}) {
   return (
     <Layout>
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to アイデア！テック
-          </h1>
-          <div>
-            <ul>
-              {blog.map((blog) => (
-                <li key={blog.id}>
-                  <Link href={`/blog/${blog.id}`}>
-                    <a>{blog.title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className={style.wrapper}>
+        <main className={style.container}>
+          {blog.map((blog, index) => {
+            return(
+              <Link href={`/blog/${blog.id}`}>
+                <div key={index} className={style.blogCard}>
+                  <div className={style.textContainer}>
+                    <h3>{blog.title}</h3>
+                  </div>
+                </div>
+              </Link>
+            )}
+          )}
         </main>
 
         <footer className={styles.footer}>

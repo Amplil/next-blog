@@ -18,7 +18,8 @@ export default function BlogId({ blog }) {
           <ReactMarkdown
             rehypePlugins={[rehypeKatex]}
             remarkPlugins={[remarkMath]}>
-            {blog.body}</ReactMarkdown>
+            {blog.body}
+          </ReactMarkdown>
         </div>
       </div>
     </Layout>
