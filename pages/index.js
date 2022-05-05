@@ -14,7 +14,7 @@ export default function Home({blog}) {
           {blog.map((blog, index) => {
             return(
               <Link href={`/blog/${blog.id}`}>
-                <div key={index} className={style.blogCard}>
+                <div className={style.blogCard}>
                   <div className={style.textContainer}>
                     <h3>{blog.title}</h3>
                   </div>
