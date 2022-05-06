@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
@@ -13,4 +16,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.markdown h1 {
+  @apply text-3xl mt-9 mb-5 font-bold border-b border-y-gray-300;
+}
+.markdown h2 {
+  @apply text-2xl mt-8 mb-4 font-bold border-b border-y-gray-300;
+}
+.markdown h3 {
+  @apply text-xl mt-6 mb-4 font-bold border-b border-y-gray-300;
+}
+.markdown blockquote {
+  @apply mt-4 mb-4 border-l-4 border-gray-300;
+}
+.markdown img {
+  @apply mt-4 mb-6;
 }

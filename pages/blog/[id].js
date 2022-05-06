@@ -1,5 +1,5 @@
 import { client } from "../../lib/client";
-import styles from '../../styles/Home.module.css';
+//import styles from '../../styles/Home.module.css';
 import Layout from "../../components/layout"
 import * as style from "../../styles/singleBlog.module.scss"
 import ReactMarkdown from 'react-markdown'
@@ -12,15 +12,17 @@ export default function BlogId({ blog }) {
     <Layout>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <h1 className={styles.title}>{blog.title}</h1>
-          <p className={styles.publishedAt}>{blog.publishedAt}</p>
+          <p className="text-[14px] text-[#0000009a]">投稿日 {blog.publishedAt}</p>
+          <h1 className="mt-[8px] text-[33px] font-bold mb-5">{blog.title}</h1>
           <p className="category">{blog.category && `${blog.category.name}`}</p>
-          <ReactMarkdown
-            rehypePlugins={[rehypeKatex]}
-            remarkPlugins={[remarkMath]}>
-            {blog.body}
-          </ReactMarkdown>
-        </div>
+          <div className="markdown">
+            <ReactMarkdown
+              rehypePlugins={[rehypeKatex]}
+              remarkPlugins={[remarkMath]}>
+              {blog.body}
+            </ReactMarkdown>
+          </div>
+          </div>
       </div>
     </Layout>
 );

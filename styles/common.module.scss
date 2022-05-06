@@ -6,7 +6,7 @@
     top: 0;
     width: 100%;
     z-index: 1;
-    background-color: #fff;
+    background-color: #55c500;
     .container {    
         @extend %container;
         .flexContainer {
@@ -17,7 +17,8 @@
             height: 70px;
             a {
                 color: inherit;
-                font-weight: 500;
+                font-weight: bold;
+                font-size: 23px;
             }
             li {
                 display: inline-block;

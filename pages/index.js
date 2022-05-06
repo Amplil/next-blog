@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+//import styles from '../styles/Home.module.css'
 import * as style from "../styles/blog.module.scss" 
 import Link from "next/link";
 import { client } from "../lib/client";
@@ -24,14 +24,14 @@ export default function Home({blog}) {
           )}
         </main>
 
-        <footer className={styles.footer}>
+        <footer className="flex justify-center items-center grow">
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
             Powered by{' '}
-            <span className={styles.logo}>
+            <span className="h-[1] ml-0.5">
               <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
             </span>
           </a>
