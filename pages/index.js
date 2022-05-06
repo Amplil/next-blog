@@ -13,7 +13,7 @@ export default function Home({blog}) {
         <main className={style.container}>
           {blog.map((blog, index) => {
             return(
-              <Link href={`/blog/${blog.id}`}>
+              <Link key={index} href={`/blog/${blog.id}`}>
                 <div className={style.blogCard}>
                   <div className={style.textContainer}>
                     <h3>{blog.title}</h3>
