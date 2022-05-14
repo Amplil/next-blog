@@ -13,8 +13,8 @@ export default function Home({blog}) {
         <main className={style.container}>
           {blog.map((blog, index) => {
             return(
-              <div className="pt-10">
-                <Link key={index} href={`/blog/${blog.id}`}>
+              <Link key={index} href={`/blog/${blog.id}`}>
+                <div className="pt-10">
                   <div className="rounded overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
                       <p className="text-[14px] text-[#0000009a]">{blog.publishedAt}</p>
@@ -22,8 +22,8 @@ export default function Home({blog}) {
                       <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"># {blog.category && `${blog.category.name}`}</span>
                     </div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             )}
           )}
         </main>
