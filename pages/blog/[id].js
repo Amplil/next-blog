@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
+//import { Tag } from 'react-feather';
 
 export default function BlogId({ blog }) {
   return (
@@ -14,7 +15,7 @@ export default function BlogId({ blog }) {
         <div className={style.container}>
           <p className="text-[14px] text-[#0000009a]">投稿日 {blog.publishedAt}</p>
           <h1 className="mt-[8px] text-[33px] font-bold mb-5">{blog.title}</h1>
-          <p className="category">{blog.category && `${blog.category.name}`}</p>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"># {blog.category && `${blog.category.name}`}</span>
           <div className="markdown">
             <ReactMarkdown
               rehypePlugins={[rehypeKatex]}

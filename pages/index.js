@@ -13,29 +13,20 @@ export default function Home({blog}) {
         <main className={style.container}>
           {blog.map((blog, index) => {
             return(
-              <Link key={index} href={`/blog/${blog.id}`}>
-                <div className={style.blogCard}>
-                  <div className={style.textContainer}>
-                    <h3>{blog.title}</h3>
+              <div className="pt-10">
+                <Link key={index} href={`/blog/${blog.id}`}>
+                  <div className="rounded overflow-hidden shadow-lg">
+                    <div className="px-6 py-4">
+                      <p className="text-[14px] text-[#0000009a]">{blog.publishedAt}</p>
+                      <div className="font-bold text-xl mb-2 hover:underline">{blog.title}</div>
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"># {blog.category && `${blog.category.name}`}</span>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             )}
           )}
         </main>
-
-        <footer className="flex justify-center items-center grow">
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <span className="h-[1] ml-0.5">
-              <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-            </span>
-          </a>
-        </footer>
       </div>
     </Layout>
   )
