@@ -3,7 +3,7 @@ export default function TableOfContents({ body }){
   const ankerLink =(h_num) => {
     let num=0;
     if(h_num >= 1)num=h_num-1;
-    return ({ node, ...props }) => {
+    return function anker({ node, ...props }) {
       return (
         <a href={"#"+node.position?.start.line.toString()}>
           <li className="text-gray-500 hover:bg-gray-200">{'　'.repeat(num)+props.children}</li>

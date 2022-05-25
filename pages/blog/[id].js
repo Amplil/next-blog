@@ -6,8 +6,9 @@ import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 //import { Tag } from 'react-feather';
 import TableOfContents from '../../components/table-of-contents'
-import Seo from "../../components/seo"
+import Seo from '../../components/seo'
 import Sidebar from '../../components/sidebar'
+import CodeBlock from '../../components/codeblock'
 
 export default function BlogId({ blog }) {
   const H1 = ({ node, ...props }) => {
@@ -52,6 +53,7 @@ export default function BlogId({ blog }) {
             <ReactMarkdown
             rehypePlugins={[rehypeKatex]}
             remarkPlugins={[remarkMath]}
+            renderers={{ code: CodeBlock }}
             components={{
               h1: H1,
               h2: H2,
