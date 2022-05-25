@@ -37,3 +37,6 @@ a {
 .markdown img {
   @apply mt-4 mb-6;
 }
+.markdown pre {
+  @apply overflow-x-auto bg-gray-700 pt-4 pb-4 pl-6 mt-6 mb-8 text-white;
+}
