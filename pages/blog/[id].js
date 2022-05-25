@@ -46,7 +46,7 @@ export default function BlogId({ blog }) {
       <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28 flex">
         <div className="bg-white w-2/3 pl-8 pr-8">
           <p className="text-[14px] text-[#0000009a] pt-6">投稿日 {blog.publishedAt}</p>
-          <h1 className="mt-[8px] text-[33px] font-bold mb-5">{blog.title}</h1>
+          <h1 className="mt-[8px] text-[33px] font-bold">{blog.title}</h1>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"># {blog.category && `${blog.category.name}`}</span>
           <div className="markdown">
             <ReactMarkdown

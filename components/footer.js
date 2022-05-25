@@ -8,7 +8,7 @@ const Footer = () => {
       <p><Link href="/">IdeaTech by Next.js + microCMS</Link></p>
       <a
       href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-      target="_blank">
+      target="_blank" rel="noreferrer">
       Powered by{' '}
         <span className="h-[1] ml-0.5">
           <Image src="/images/vercel.svg" alt="Vercel Logo" width={72} height={16} />

@@ -17,7 +17,7 @@ const Sidebar = ({ children }) => {
         </div>
         <div className="fixed">
             <div>
-                <a href="https://hb.afl.rakuten.co.jp/hsc/215065c8.7b0eff9b.21506482.ec2625de/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiI1NyIsImJhbiI6IjE0NjY3OTgiLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" >
+                <a href="https://hb.afl.rakuten.co.jp/hsc/215065c8.7b0eff9b.21506482.ec2625de/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiI1NyIsImJhbiI6IjE0NjY3OTgiLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="noreferrer">
                     <Image 
                     width={300}
                     height={300} 
