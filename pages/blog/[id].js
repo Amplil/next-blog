@@ -44,8 +44,8 @@ export default function BlogId({ blog }) {
   return (
     <Layout>
       <Seo title={blog.title} description="アイデア！テック | ちょっとしたアイデアから始まるテクノロジ" />
-      <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28 lg:flex">
-        <div className="bg-white lg:w-2/3 pl-8 pr-8 md:w-auto">
+      <div className="bg-[#f5f6f6] lg:pl-20 lg:pr-20 lg:pt-10 pb-10 lg:pb-28 lg:flex">
+        <div className="w-auto bg-white lg:w-2/3 pl-8 pr-8">
           <p className="text-[14px] text-[#0000009a] pt-6">投稿日 {blog.publishedAt}</p>
           <h1 className="mt-[8px] text-[33px] font-bold">{blog.title}</h1>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"># {blog.category && `${blog.category.name}`}</span>
