@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router'
-import { Helmet } from "react-helmet"
+import Head from 'next/head'
 
 const SEO = ({ title, description }) => {
     const router = useRouter()
-    const baseUrl = "https://next-book-portfolio-site.vercel.app"
+    const baseUrl = "https://ideatech.blog/"
     const currentUrl = baseUrl + router.pathname
-    const defaultImage = `${baseUrl}/images/social-card.png`
+    const defaultImage = `${baseUrl}/images/ogp.jpg`
     return (
-        <Helmet>
+        <Head>
             <html lang="ja" />
             <meta name="viewport" content="initial-scale=1.0, width=device-width" /> 
             <meta charSet="utf-8" />
@@ -23,7 +23,9 @@ const SEO = ({ title, description }) => {
             <meta property="og:url" content={currentUrl} key="ogurl" />
         
             <link rel="shortcut icon" href="/images/favicon.ico" /> 
-        </Helmet>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2661815267943239"
+        crossOrigin="anonymous"></script>
+        </Head>
     )
 }
 

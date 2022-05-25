@@ -1,15 +1,13 @@
 import { client } from "../../lib/client"
-//import styles from '../../styles/Home.module.css';
 import Layout from "../../components/layout"
-import * as style from "../../styles/singleBlog.module.scss"
 import ReactMarkdown from 'react-markdown'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 //import { Tag } from 'react-feather';
 import TableOfContents from '../../components/table-of-contents'
-//import ReactMarkdownHeading from 'react-markdown-heading'
-//import ScrollSyncToc from '../../lib/scroll-sync-toc'
+import Seo from "../../components/seo"
+import Sidebar from '../../components/sidebar'
 
 export default function BlogId({ blog }) {
   const H1 = ({ node, ...props }) => {
@@ -44,9 +42,10 @@ export default function BlogId({ blog }) {
                       };
   return (
     <Layout>
-      <div className={style.wrapper}>
-        <div className={style.container}>
-          <p className="text-[14px] text-[#0000009a]">投稿日 {blog.publishedAt}</p>
+      <Seo title={blog.title} description="アイデア！テック | ちょっとしたアイデアから始まるテクノロジ" />
+      <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28 flex">
+        <div className="bg-white w-2/3 pl-8 pr-8">
+          <p className="text-[14px] text-[#0000009a] pt-6">投稿日 {blog.publishedAt}</p>
           <h1 className="mt-[8px] text-[33px] font-bold mb-5">{blog.title}</h1>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"># {blog.category && `${blog.category.name}`}</span>
           <div className="markdown">
@@ -64,11 +63,12 @@ export default function BlogId({ blog }) {
             </ReactMarkdown>
           </div>
         </div>
-        <div class="w-64">
-          <TableOfContents body={blog.body}/>
+        <div className="w-64 pl-5 pr-5">
+          <Sidebar>
+            <TableOfContents body={blog.body}/>
+          </Sidebar>
         </div>
       </div>
-
     </Layout>
   );
 }

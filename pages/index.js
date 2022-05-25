@@ -1,21 +1,20 @@
-import Image from 'next/image'
-//import styles from '../styles/Home.module.css'
-import * as style from "../styles/blog.module.scss" 
 import Link from "next/link";
 import { client } from "../lib/client";
 import Layout from "../components/layout" 
-
+import Seo from "../components/seo"
+import Sidebar from '../components/sidebar'
 
 export default function Home({blog}) {
   return (
     <Layout>
-      <div className={style.wrapper}>
-        <main className={style.container}>
+      <Seo title="アイデア！テック" description="ちょっとしたアイデアから始まるテクノロジ" /> 
+      <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28  flex justify-center">
+        <div className="w-2/3 pl-8 pr-8">
           {blog.map((blog, index) => {
             return(
               <Link key={index} href={`/blog/${blog.id}`}>
                 <div className="pt-10">
-                  <div className="rounded overflow-hidden shadow-lg">
+                  <div className="bg-white rounded overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
                       <p className="text-[14px] text-[#0000009a]">{blog.publishedAt}</p>
                       <div className="font-bold text-xl mb-2 hover:underline">{blog.title}</div>
@@ -26,7 +25,10 @@ export default function Home({blog}) {
               </Link>
             )}
           )}
-        </main>
+        </div>
+        <div className="w-64 pl-5 pr-5">
+          <Sidebar />
+        </div>
       </div>
     </Layout>
   )
