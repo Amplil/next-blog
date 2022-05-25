@@ -44,28 +44,31 @@ export default function BlogId({ blog }) {
   return (
     <Layout>
       <Seo title={blog.title} description="アイデア！テック | ちょっとしたアイデアから始まるテクノロジ" />
-      <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28 flex">
-        <div className="bg-white w-2/3 pl-8 pr-8">
+      <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28 lg:flex">
+        <div className="bg-white lg:w-2/3 pl-8 pr-8 md:w-auto">
           <p className="text-[14px] text-[#0000009a] pt-6">投稿日 {blog.publishedAt}</p>
           <h1 className="mt-[8px] text-[33px] font-bold">{blog.title}</h1>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"># {blog.category && `${blog.category.name}`}</span>
+          <div className="lg:hidden w-auto p-5">
+            <TableOfContents body={blog.body}/>
+          </div>
           <div className="markdown">
             <ReactMarkdown
             rehypePlugins={[rehypeKatex]}
             remarkPlugins={[remarkMath]}
-            renderers={{ code: CodeBlock }}
             components={{
               h1: H1,
               h2: H2,
               h3: H3,
               h4: H4,
               h5: H5,
-              h6: H6,}}>
+              h6: H6,
+              code: CodeBlock}}>
                 {blog.body}
             </ReactMarkdown>
           </div>
         </div>
-        <div className="w-64 pl-5 pr-5">
+        <div className="hidden w-64 pl-5 pr-5 lg:block">
           <Sidebar>
             <TableOfContents body={blog.body}/>
           </Sidebar>

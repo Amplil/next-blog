@@ -8,8 +8,8 @@ export default function Home({blog}) {
   return (
     <Layout>
       <Seo title="アイデア！テック" description="ちょっとしたアイデアから始まるテクノロジ" /> 
-      <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28  flex justify-center">
-        <div className="w-2/3 pl-8 pr-8">
+      <div className="bg-[#f5f6f6] pl-20 pr-20 pt-10 pb-28 flex justify-center">
+        <div className="lg:w-2/3 pl-8 pr-8 md:w-auto">
           {blog.map((blog, index) => {
             return(
               <Link key={index} href={`/blog/${blog.id}`}>
@@ -26,7 +26,7 @@ export default function Home({blog}) {
             )}
           )}
         </div>
-        <div className="w-64 pl-5 pr-5">
+        <div className="hidden w-64 pl-5 pr-5 lg:block">
           <Sidebar />
         </div>
       </div>

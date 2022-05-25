@@ -37,6 +37,36 @@ a {
 .markdown img {
   @apply mt-4 mb-6;
 }
+/* Links */
+.markdown a {
+  @apply text-blue-600;
+}
+.markdown a:hover {
+  @apply underline;
+}
+/* Lists */
+.markdown ul,
+.markdown ol {
+  @apply mb-4 ml-8;
+}
+.markdown li > p,
+.markdown li > ul,
+.markdown li > ol {
+  @apply mb-0;
+}
+.markdown ol {
+  @apply list-decimal;
+}
+.markdown ul {
+  @apply list-disc;
+}
+
+/* Code */
+.markdown :not(pre) > code {
+  @apply bg-indigo-50 p-1 font-semibold text-gray-600 rounded-lg ;
+}
+
+/* Pre */
 .markdown pre {
-  @apply overflow-x-auto bg-gray-700 pt-4 pb-4 pl-6 mt-6 mb-8 text-white;
+  @apply overflow-x-auto bg-[#f5f7ff] pt-4 pb-4 pl-6 mt-6 mb-8;
 }

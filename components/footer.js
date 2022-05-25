@@ -11,7 +11,7 @@ const Footer = () => {
       target="_blank" rel="noreferrer">
       Powered by{' '}
         <span className="h-[1] ml-0.5">
-          <Image src="/images/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </span>
       </a>
     </footer>
